@@ -6,7 +6,7 @@ import {showErrorMsg, showSuccessMsg} from '../helpers/message';
 import {showLoading} from '../helpers/loading';
 import { Link } from 'react-router-dom';
 import './Signup.css';
-import { signup } from '../API/auth';
+import { signup } from '../api/auth';
 
 const Singup = () => {
     const[formData, setFormData] = useState ({
