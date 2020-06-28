@@ -3,6 +3,7 @@ import React, { useState }from 'react';
 import {Link} from 'react-router-dom';
 import {showErrorMsg} from '../helpers/message';
 import {showLoading} from '../helpers/loading';
+import {setAuthentication} from '../helpers/auth';
 import isEmail from 'validator/lib/isEmail';
 import isEmpty from 'validator/lib/isEmpty';
 import { signin } from '../api/auth';
@@ -11,9 +12,8 @@ import { signin } from '../api/auth';
 const Signin = () =>{
 
     const[formData, setFormData] = useState ({
-        username: 'Tali',
         email: 'tal@tal.com',
-        password: '123',
+        password: '123456',
         errorMsg: false,
         loading: false,
         redirectToDashboard: false,
@@ -57,8 +57,13 @@ const Signin = () =>{
             setFormData({ ...formData, loading: true });
 
             signin(data)
-                .then()
-                .catch()
+                .then(response => {
+                    setAuthentication(response.data.token, response.data.user);
+                
+                })
+                .catch( err => {
+                    console.log('signin api function error: ' , err);
+                });
             
        }
 
