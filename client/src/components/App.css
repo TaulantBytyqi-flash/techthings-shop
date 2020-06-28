@@ -1,0 +1,15 @@
+.signup-container{
+    background-image: url('ales-nesetril-Im7lZjxeLhg-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.signin-container{
+    background-image: url('mihaly-koles-gccbrmlXZ7g-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}

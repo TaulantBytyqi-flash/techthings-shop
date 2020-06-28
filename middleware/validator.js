@@ -15,17 +15,28 @@ check('password')
     
 ];
 
-exports.validatorResults = (req, res, next) => {
-    const results = validationResult(req);
-    const hasErrors = !results.isEmpty();
+exports.signinValidator = [
+    check('email').not().isEmpty()
+        .isEmail()
+        .normalizeEmail()
+        .withMessage('Email invalide'),
+    check('password')
+        .isLength({ min: 6 })
+        .withMessage('Fjalekalimi duhet te kete se paku 6 karaktere'),
+        
+    ];
+
+exports.validatorResult = (req, res, next) => {
+   const result = validationResult(req);
+    const hasErrors = !result.isEmpty();
     if (hasErrors){
         const firstError = result.array() [0].msg;
         return res.status(400).json({
             errorMessage: firstError,
         });
 
-        //console.log('hasErrors: ', hasErrors);
-        //console.log('result', result);
+       // console.log('hasErrors: ', hasErrors);
+       // console.log('result', result);
     }
     next();
 };

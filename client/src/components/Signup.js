@@ -5,10 +5,9 @@ import equals from 'validator/lib/equals';
 import {showErrorMsg, showSuccessMsg} from '../helpers/message';
 import {showLoading} from '../helpers/loading';
 import { Link } from 'react-router-dom';
-import './Signup.css';
 import { signup } from '../api/auth';
 
-const Singup = () => {
+const Signup = () => {
     const[formData, setFormData] = useState ({
         username: 'Tali',
         surname: 'Bosi',
@@ -79,7 +78,7 @@ const Singup = () => {
                             password: '',
                             password2: '',
                             adresa: '',
-                            username:'',
+                            surname:'',
                             loading: false,
                             successMsg: response.data.successMessage
                         })
@@ -87,7 +86,7 @@ const Singup = () => {
                 .catch((err) => {
                     console.log('Axios signup error: ', err);
                     setFormData({
-                        ...formData, loading: false
+                        ...formData, loading: false, errorMsg: err.response.data.errorMessage
                     });
 
                 });
@@ -206,7 +205,7 @@ const showSingupForm = () => (
         </div>
 
         <p className='text-center text-white'>
-            Nese keni account <a href = '/singin'>singin</a>
+            Nese keni account <Link to= '/signin'>signin</Link>
         </p>
         
 
@@ -229,4 +228,4 @@ return (
     );
 }
 
-export default Singup;
+export default Signup;
