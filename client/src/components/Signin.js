@@ -57,6 +57,8 @@ const Signin = () =>{
             setFormData({ ...formData, loading: true });
 
             signin(data)
+                .then()
+                .catch()
             
        }
 
