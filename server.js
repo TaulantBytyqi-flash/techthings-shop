@@ -11,6 +11,10 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/api/auth', authRoutes);
+app.use('/api/product', require('./routes/product'));
+
+app.use('/uploads', express.static('uploads'));
+
 
 connectDB();
 

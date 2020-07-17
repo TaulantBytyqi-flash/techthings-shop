@@ -35,8 +35,7 @@ exports.validatorResult = (req, res, next) => {
             errorMessage: firstError,
         });
 
-       // console.log('hasErrors: ', hasErrors);
-       // console.log('result', result);
+       
     }
     next();
 };
