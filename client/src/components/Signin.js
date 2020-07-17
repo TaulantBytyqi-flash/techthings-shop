@@ -83,7 +83,7 @@ const Signin = () =>{
 
 
                 .catch( err => {
-                    console.log('signin api function error: ' , err);
+                    console.log('Dicka deshtoi' , err);
                 });
             
        }

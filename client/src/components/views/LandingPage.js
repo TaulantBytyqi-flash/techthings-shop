@@ -144,7 +144,7 @@ function LandingPage() {
 
 
     return (
-        <div style={{ width: '75%', margin: '2rem auto' }}>
+        <div style={{ width: '80%', margin: '2rem auto', color:'black' }}>
             <div style={{ textAlign: 'center'}}>
                 <h2>  Produktet    </h2>
             </div>
@@ -152,7 +152,7 @@ function LandingPage() {
 
             {/* Filterat  */}
 
-            <Row gutter={[16, 16]}>
+            <Row gutter={[20, 10]}>
                 <Col lg={12} xs={24} >
                     <CheckBox
                         list={categories}
@@ -169,7 +169,7 @@ function LandingPage() {
 
 
             {/* Searchi  */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
 
                 <SearchFeature
                     refreshFunction={updateSearchTerms}
@@ -179,7 +179,7 @@ function LandingPage() {
 
 
             {Products.length === 0 ?
-                <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center', color: 'black' }}>
                     <h2>Do te shtohet ne stock se shpejti</h2>
                 </div> :
                 <div>
@@ -197,7 +197,7 @@ function LandingPage() {
 
             {PostSize >= Limit &&
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button onClick={onLoadMore}>Load More</button>
+                    <button onClick={onLoadMore}>Me shume</button>
                 </div>
             }
 
