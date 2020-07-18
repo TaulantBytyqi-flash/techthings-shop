@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+ 
 export const signup = async (data) => {
     const config ={
         headers: {
@@ -7,7 +7,7 @@ export const signup = async (data) => {
         },
     };
 
-    const response = await axios.post('/api/auth/signup', data, config);
+    const response = await axios.post('/api/auth/signup', data, config );
 
     return response;
 

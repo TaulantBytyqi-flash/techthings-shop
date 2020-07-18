@@ -20,8 +20,11 @@ const UserSchema = new mongose.Schema({
     cart: {
         type: Array,
         default: []
-    }
-
+    },
+    history: {
+        type: Array,
+        default: []
+    },
         
 }, { timestamps: true});
 
