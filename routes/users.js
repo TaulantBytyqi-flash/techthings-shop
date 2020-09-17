@@ -3,6 +3,7 @@ const router = express.Router();
 const { User } = require("../models/User");
 const { Product } = require('../models/Product');
 const { router } = require("./auth");
+const { auth } = require("../middleware/auth");
 const { Payment } = require('../models/Payment');
 
 const async = require('async');
@@ -11,7 +12,7 @@ const async = require('async');
 //             User
 //=================================
 
-router.get("/auth", router, (req, res) => {
+router.get("/auth", auth, (req, res) => {
     res.status(200).json({
         _id: req.user._id,
         isAdmin: req.user.role === 0 ? false : true,

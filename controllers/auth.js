@@ -2,7 +2,7 @@ const{ User } = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {jwtSecret, jwtExpire} = require('../config/keys');
-const { model } = require('mongoose');
+
 
 exports.signupController = async (req, res) => {
     //Marrja e te dhenave te userit
