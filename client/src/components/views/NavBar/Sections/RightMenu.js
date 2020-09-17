@@ -35,7 +35,7 @@ function RightMenu(props) {
       <Menu mode={props.mode}>
 
         <Menu.Item key="history">
-          <a href="/history">History</a>
+          <a href="/history">Historia e blerjeve</a>
         </Menu.Item>
 
         <Menu.Item key="upload">

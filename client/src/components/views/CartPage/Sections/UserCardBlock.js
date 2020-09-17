@@ -22,7 +22,7 @@ function UserCardBlock(props) {
                 <td>$ {product.price} </td>
                 <td><button 
                 onClick={()=> props.removeItem(product._id)}
-                >Remove </button> </td>
+                >Largoje </button> </td>
             </tr>
         ))
     )
@@ -33,10 +33,10 @@ function UserCardBlock(props) {
             <table>
                 <thead>
                     <tr>
-                        <th>Product Image</th>
-                        <th>Product Quantity</th>
-                        <th>Product Price</th>
-                        <th>Remove from Cart</th>
+                        <th>Imazhi i produktit</th>
+                        <th>Sasia</th>
+                        <th>Cmimi i produktit</th>
+                        <th>Largoje nga shporta</th>
                     </tr>
                 </thead>
                 <tbody>

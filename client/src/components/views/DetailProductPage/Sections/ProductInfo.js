@@ -21,7 +21,7 @@ function ProductInfo(props) {
             <Descriptions title="Informactionet rreth Produktit">
                 <Descriptions.Item label="Qmimi"> {Product.price}</Descriptions.Item>
                 <Descriptions.Item label="Shitur">{Product.sold}</Descriptions.Item>
-                <Descriptions.Item label="Shikuar"> {Product.views}</Descriptions.Item>
+               {/*<Descriptions.Item label="Shikuar"> {Product.views}</Descriptions.Item>*/}
                 <Descriptions.Item label="Pershkrimi"> {Product.description}</Descriptions.Item>
             </Descriptions>
 

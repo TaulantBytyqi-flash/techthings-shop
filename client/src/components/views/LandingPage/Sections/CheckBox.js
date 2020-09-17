@@ -44,6 +44,7 @@ function CheckBox(props) {
                 </Panel>
             </Collapse>
         </div>
+        
     )
 }
 
