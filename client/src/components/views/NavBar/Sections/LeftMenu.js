@@ -7,16 +7,37 @@ function LeftMenu(props) {
   return (
     <Menu mode={props.mode}>
     <Menu.Item key="mail">
-      <a href="/">Home</a>
+      <a href="/">Produktet</a>
     </Menu.Item>
-    <SubMenu title={<span>Blogs</span>}>
-      <MenuItemGroup title="Item 1">
-        <Menu.Item key="setting:1">Option 1</Menu.Item>
-        <Menu.Item key="setting:2">Option 2</Menu.Item>
+    <SubMenu title={<span>Pjese per kompjutere</span>}>
+      <MenuItemGroup title="Case">
+        <Menu.Item key="setting:1">Akseore</Menu.Item>
+        <Menu.Item key="setting:2">Full Tower</Menu.Item>
       </MenuItemGroup>
-      <MenuItemGroup title="Item 2">
-        <Menu.Item key="setting:3">Option 3</Menu.Item>
-        <Menu.Item key="setting:4">Option 4</Menu.Item>
+      <MenuItemGroup title="Procesore">
+        <Menu.Item key="setting:3">Per server</Menu.Item>
+        <Menu.Item key="setting:4">Per Kompjutere</Menu.Item>
+      </MenuItemGroup>
+    </SubMenu>
+    <SubMenu title={<span>Gaming</span>}>
+      <MenuItemGroup title="Playstaion 4">
+        <Menu.Item key="setting:1">Konzola</Menu.Item>
+        <Menu.Item key="setting:2">Akseore</Menu.Item>
+        <Menu.Item key="setting:3">VR</Menu.Item>
+      </MenuItemGroup>
+      <MenuItemGroup title="Xbox One">
+        <Menu.Item key="setting:3">Konzola</Menu.Item>
+        <Menu.Item key="setting:4">Kufje</Menu.Item>
+      </MenuItemGroup>
+    </SubMenu>
+    <SubMenu title={<span>Akseore</span>}>
+      <MenuItemGroup title="Aksesore">
+        <Menu.Item key="setting:1">Kabllo</Menu.Item>
+        <Menu.Item key="setting:2">Maus</Menu.Item>
+      </MenuItemGroup>
+      <MenuItemGroup title="Canta">
+        <Menu.Item key="setting:3">Per laptop</Menu.Item>
+        <Menu.Item key="setting:4">Per aparat fotografik</Menu.Item>
       </MenuItemGroup>
     </SubMenu>
   </Menu>

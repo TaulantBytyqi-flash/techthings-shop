@@ -48,18 +48,18 @@ function RegisterPage(props) {
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string()
-          .required('Name is required'),
+          .required('Emri duhet te shenohet'),
         lastName: Yup.string()
-          .required('Last Name is required'),
+          .required('Mbiemri duhet te shenohet'),
         email: Yup.string()
-          .email('Email is invalid')
-          .required('Email is required'),
+          .email('Email eshte invalid')
+          .required('Email duhet te shenohet'),
         password: Yup.string()
-          .min(6, 'Password must be at least 6 characters')
-          .required('Password is required'),
+          .min(6, 'Fjalekalimi duhet te permbaje 6 karaktere ose me shume')
+          .required('Fjalekalimi eshte i nevojshem'),
         confirmPassword: Yup.string()
-          .oneOf([Yup.ref('password'), null], 'Passwords must match')
-          .required('Confirm Password is required')
+          .oneOf([Yup.ref('password'), null], 'Fjalekalimet duhet te jene te njejta')
+          .required('Konfirmimi i fjalekalimin tuaj')
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
@@ -98,13 +98,13 @@ function RegisterPage(props) {
         } = props;
         return (
           <div className="app">
-            <h2>Sign up</h2>
+            <h2>Regjistrohuni</h2>
             <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} >
 
-              <Form.Item required label="Name">
+              <Form.Item required label="Emri">
                 <Input
                   id="name"
-                  placeholder="Enter your name"
+                  placeholder="Shkruani emri tuaj"
                   type="text"
                   value={values.name}
                   onChange={handleChange}
@@ -118,10 +118,10 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Last Name">
+              <Form.Item required label="Mbiemri">
                 <Input
                   id="lastName"
-                  placeholder="Enter your Last Name"
+                  placeholder="Shkruani mbimerin tuaj"
                   type="text"
                   value={values.lastName}
                   onChange={handleChange}
@@ -138,7 +138,7 @@ function RegisterPage(props) {
               <Form.Item required label="Email" hasFeedback validateStatus={errors.email && touched.email ? "error" : 'success'}>
                 <Input
                   id="email"
-                  placeholder="Enter your Email"
+                  placeholder="Shkruani email-in tuaj"
                   type="email"
                   value={values.email}
                   onChange={handleChange}
@@ -152,10 +152,10 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Password" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
+              <Form.Item required label="Fjalekalimi" hasFeedback validateStatus={errors.password && touched.password ? "error" : 'success'}>
                 <Input
                   id="password"
-                  placeholder="Enter your password"
+                  placeholder="Shkruani fjalekalimin"
                   type="password"
                   value={values.password}
                   onChange={handleChange}
@@ -169,10 +169,10 @@ function RegisterPage(props) {
                 )}
               </Form.Item>
 
-              <Form.Item required label="Confirm" hasFeedback>
+              <Form.Item required label="Konfirmoni" hasFeedback>
                 <Input
                   id="confirmPassword"
-                  placeholder="Enter your confirmPassword"
+                  placeholder="Konfirmoni fjalekalimin tuaj"
                   type="password"
                   value={values.confirmPassword}
                   onChange={handleChange}
@@ -188,7 +188,7 @@ function RegisterPage(props) {
 
               <Form.Item {...tailFormItemLayout}>
                 <Button onClick={handleSubmit} type="primary" disabled={isSubmitting}>
-                  Submit
+                  Regjistrohu
                 </Button>
               </Form.Item>
             </Form>
