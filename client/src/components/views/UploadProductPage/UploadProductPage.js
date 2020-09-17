@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography, Button, Form, Input, } from 'antd';
+import { Typography, Button, Form, message, Input, Icon } from 'antd';
 import FileUpload from '../../utils/FileUpload'
 import Axios from 'axios';
 
@@ -12,7 +12,7 @@ const Categories = [
     { key: 3, value: "Gaming" },
     { key: 4, value: "Aparate Fotografike" },
     { key: 5, value: "Aksesore" },
-    { key: 6, value: "Video,Audio" },
+    { key: 6, value: "Video,Audio" }
 ]
 
 function UploadProductPage(props) {
@@ -41,6 +41,8 @@ function UploadProductPage(props) {
         setPriceValue(event.currentTarget.value)
     }
 
+    
+
     const updateImages = (newImages) => {
         setImages(newImages)
     }
@@ -49,7 +51,7 @@ function UploadProductPage(props) {
 
 
         if (!TitleValue || !DescriptionValue || !PriceValue ||
-            !CategoryValue ) {
+            !CategoryValue || !Images) {
             return alert('Mbushi gjitha te dhenat')
         }
 
@@ -84,8 +86,7 @@ function UploadProductPage(props) {
             <Form onSubmit={onSubmit} >
 
                 {/* DropZone */}
-                <FileUpload refreshFunction={updateImages}/>
-                
+                <FileUpload refreshFunction={updateImages} />
 
                 <br />
                 <br />
@@ -101,10 +102,9 @@ function UploadProductPage(props) {
                     onChange={onDescriptionChange}
                     value={DescriptionValue}
                 />
-
                 <br />
                 <br />
-                <label>Qmimi</label>
+                <label>Qmimi(€)</label>
                 <Input
                     onChange={onPriceChange}
                     value={PriceValue}
@@ -120,9 +120,9 @@ function UploadProductPage(props) {
                 <br />
 
                 <Button
-                    onClick = {onSubmit}
-                    >
-                    Submit
+                    onClick={onSubmit}
+                >
+                    Ruaj
                 </Button>
 
             </Form>

@@ -1,12 +1,12 @@
-
 import React, { useEffect, useState } from 'react'
 import { Button, Descriptions } from 'antd';
 
-function ProductInfo(props){
+function ProductInfo(props) {
 
-    const[Product, setProduct] = useState({})
+    const [Product, setProduct] = useState({})
 
     useEffect(() => {
+
         setProduct(props.detail)
 
     }, [props.detail])
@@ -14,6 +14,7 @@ function ProductInfo(props){
     const addToCarthandler = () => {
         props.addToCart(props.detail._id)
     }
+
 
     return (
         <div>
@@ -31,13 +32,11 @@ function ProductInfo(props){
                 <Button size="large" shape="round" type="danger"
                     onClick={addToCarthandler}
                 >
-                    Add to Cart
+                    Shto ne shporte
                     </Button>
-        </div>
-
+            </div>
         </div>
     )
 }
-
 
 export default ProductInfo

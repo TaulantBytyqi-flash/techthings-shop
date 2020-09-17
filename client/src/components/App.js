@@ -1,37 +1,36 @@
-import React from 'react';
-import  { BrowserRouter, Switch, Route } from 'react-router-dom';
-//import Auth from "../hoc/auth";
-import './App.css';
-import Header from './Header';
-//import Home from './Home';
-import Signup from './Signup';
-import Signin from './Signin';
-import UserDashboard from './UserDashboard';
-import AdminDashboard from './AdminDashboard';
-import UploadProductPage from './views/UploadProductPage/UploadProductPage';
-import LandingPage from './views/LandingPage';
+import React, { Suspense } from 'react';
+import { Route, Switch } from "react-router-dom";
+import Auth from "../hoc/auth";
+// pages for this product
+import LandingPage from "./views/LandingPage/LandingPage.js";
+import LoginPage from "./views/LoginPage/LoginPage.js";
+import RegisterPage from "./views/RegisterPage/RegisterPage.js";
+import NavBar from "./views/NavBar/NavBar";
+import Footer from "./views/Footer/Footer"
+import UploadProductPage from './views/UploadProductPage/UploadProductPage'
 import DetailProductPage from './views/DetailProductPage/DetailProductPage';
 import CartPage from './views/CartPage/CartPage';
+import HistoryPage from './views/HistoryPage/HistoryPage';
 
+function App() {
+  return (
+    <Suspense fallback={(<div>Loading...</div>)}>
+      <NavBar />
+      <div style={{ paddingTop: '75px', minHeight: 'calc(100vh - 80px)' }}>
+        <Switch>
+          <Route exact path="/" component={Auth(LandingPage, null)} />
+          <Route exact path="/login" component={Auth(LoginPage, false)} />
+          <Route exact path="/register" component={Auth(RegisterPage, false)} />
+          <Route exact path="/product/upload" component={Auth(UploadProductPage, true)} />
+          <Route exact path="/product/:productId" component={Auth(DetailProductPage, null)} />
+          <Route exact path="/user/cart" component={Auth(CartPage, true)} />
+          <Route exact path="/history" component={Auth(HistoryPage, true)} />
 
-const App = () => (
-  <BrowserRouter>
-    <Header />
-    <main>
-      <Switch>
-        <Route exact path='/' component={LandingPage} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/signin' component={Signin} />
-        <Route exact path='/user/dashboard' component={UserDashboard} />
-        <Route exact path='/admin/dashboard' component={AdminDashboard} />
-        <Route exact path='/product/upload' component={UploadProductPage} />
-        <Route exact path='/product/:productId' component={DetailProductPage} />
-        <Route exact path='/user/cart' component={CartPage} />
-        
-      </Switch>
-    </main>
-  </BrowserRouter>
+        </Switch>
+      </div>
+      <Footer />
+    </Suspense>
   );
-
+}
 
 export default App;
