@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname)
         if (ext !== '.jpg' || ext !== '.png') {
-            return cb(res.status(400).end('only jpg, png are allowed'), false);
+            return cb(res.status(400).end('Vetem png the jpeg jane te lejuara'), false);
         }
         cb(null, true)
     }
@@ -24,9 +24,6 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).single("file")
 
 
-//=================================
-//             Product
-//=================================
 
 router.post("/uploadImage", (req, res) => {
 

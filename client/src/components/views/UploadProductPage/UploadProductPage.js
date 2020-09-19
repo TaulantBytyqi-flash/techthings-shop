@@ -12,7 +12,10 @@ const Categories = [
     { key: 3, value: "Gaming" },
     { key: 4, value: "Aparate Fotografike" },
     { key: 5, value: "Aksesore" },
-    { key: 6, value: "Video,Audio" }
+    { key: 6, value: "Full Tower" },
+    { key: 7, value: "Aksesore"},
+    { key: 7, value: "Per Server"},
+    { key: 7, value: "Per Kompjuter"}
 ]
 
 function UploadProductPage(props) {

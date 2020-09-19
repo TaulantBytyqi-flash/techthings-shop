@@ -115,7 +115,7 @@ function CartPage(props) {
 
 
 
-            {/* Paypal Button */}
+            {/* Paypal*/}
 
             {ShowTotal &&
 

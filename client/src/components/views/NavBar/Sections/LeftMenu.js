@@ -11,7 +11,7 @@ function LeftMenu(props) {
     </Menu.Item>
     <SubMenu title={<span>Pjese per kompjutere</span>}>
       <MenuItemGroup title="Case">
-        <Menu.Item key="setting:1">Akseore</Menu.Item>
+        <Menu.Item key="setting:1"><a href="/computerparts"></a>Akseore</Menu.Item>
         <Menu.Item key="setting:2">Full Tower</Menu.Item>
       </MenuItemGroup>
       <MenuItemGroup title="Procesore">
