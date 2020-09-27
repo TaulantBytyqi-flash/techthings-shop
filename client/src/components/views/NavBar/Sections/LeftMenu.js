@@ -12,11 +12,11 @@ function LeftMenu(props) {
     <SubMenu title={<span>Pjese per kompjutere</span>}>
       <MenuItemGroup title="Case">
         <Menu.Item key="setting:1"><a href="/computerparts"></a>Akseore</Menu.Item>
-        <Menu.Item key="setting:2">Full Tower</Menu.Item>
+        <Menu.Item key="setting:2"><a href="/computerparts"></a>Full Tower</Menu.Item>
       </MenuItemGroup>
       <MenuItemGroup title="Procesore">
-        <Menu.Item key="setting:3">Per server</Menu.Item>
-        <Menu.Item key="setting:4">Per Kompjutere</Menu.Item>
+        <Menu.Item key="setting:3"><a href="/computerparts"></a>Per server</Menu.Item>
+        <Menu.Item key="setting:4"><a href="/computerparts"></a>Per Kompjutere</Menu.Item>
       </MenuItemGroup>
     </SubMenu>
     <SubMenu title={<span>Gaming</span>}>

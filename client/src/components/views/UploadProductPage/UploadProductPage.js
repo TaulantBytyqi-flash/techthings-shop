@@ -80,7 +80,7 @@ function UploadProductPage(props) {
     }
 
     return (
-        <div style={{ maxWidth: '700px', margin: '2rem auto' }}>
+        <div style={{ maxWidth: '700px', margin: '7rem auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                 <Title level={2}> Shto Produktin</Title>
             </div>
@@ -88,7 +88,7 @@ function UploadProductPage(props) {
 
             <Form onSubmit={onSubmit} >
 
-                {/* DropZone */}
+                
                 <FileUpload refreshFunction={updateImages} />
 
                 <br />

@@ -34,7 +34,7 @@ function LandingPage() {
     }, [])
 
     const getProducts = (variables) => {
-        Axios.post('/api/product/getProducts', variables)
+        Axios.post('/api/products_by_id', variables)
             .then(response => {
                 if (response.data.success) {
                     if (variables.loadMore) {
@@ -69,7 +69,7 @@ function LandingPage() {
         return <Col lg={6} md={8} xs={24}>
             <Card
                 hoverable={true}
-                cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
+                cover={<a href={`/products_by_id/${product._id}`} > <ImageSlider images={product.images} /></a>}
             >
                 <Meta
                     title={product.title}

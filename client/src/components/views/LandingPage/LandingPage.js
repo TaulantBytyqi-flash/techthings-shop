@@ -141,6 +141,7 @@ function LandingPage() {
     }
 
 
+    
     return (
         <div style={{ width: '75%', margin: '3rem auto' }}>
             <div style={{ textAlign: 'center' }}>
@@ -178,7 +179,7 @@ function LandingPage() {
 
             {Products.length === 0 ?
                 <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
-                    <h2>Do te shtohet ne stock se shpejti</h2>
+                    <h2>Do te shtohet ne stock se shpeeejti</h2>
                 </div> :
                 <div>
                     <Row gutter={[16, 16]}>

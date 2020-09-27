@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
-import {  Col, Card, Row } from 'antd';
-import ImageSlider from '../utils/ImageSlider';
+import { Icon, Col, Card, Row } from 'antd';
+import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';
 import RadioBox from './Sections/RadioBox';
 import { categories, price } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
-import 'antd/dist/antd.css';
-
 
 const { Meta } = Card;
 
 function LandingPage() {
- 
+
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(8)
@@ -68,9 +66,9 @@ function LandingPage() {
 
     const renderCards = Products.map((product, index) => {
 
-        return <Col key={index.toString()} lg={6} md={8} xs={24}>
-            <Card 
-                hoverable={true}
+        return <Col lg={6} md={8} xs={24}>
+            <Card
+                actions="string"
                 cover={<a href={`/product/${product._id}`} > <ImageSlider images={product.images} /></a>}
             >
                 <Meta
@@ -143,16 +141,17 @@ function LandingPage() {
     }
 
 
+    
     return (
-        <div style={{ width: '80%', margin: '2rem auto', color:'black' }}>
-            <div style={{ textAlign: 'center'}}>
-                <h2>  Produktet    </h2>
+        <div style={{ width: '75%', margin: '3rem auto' }}>
+            <div style={{ textAlign: 'center' }}>
+                <h2>  Userat    </h2>
             </div>
 
 
-            {/* Filterat  */}
+            {/* Filter  */}
 
-            <Row gutter={[20, 10]}>
+            <Row gutter={[16, 16]}>
                 <Col lg={12} xs={24} >
                     <CheckBox
                         list={categories}
@@ -168,8 +167,8 @@ function LandingPage() {
             </Row>
 
 
-            {/* Searchi  */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto'}}>
+            {/* Search  */}
+            <div style={{ display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
 
                 <SearchFeature
                     refreshFunction={updateSearchTerms}
@@ -179,12 +178,11 @@ function LandingPage() {
 
 
             {Products.length === 0 ?
-                <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center', color: 'black' }}>
+                <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
                     <h2>Do te shtohet ne stock se shpejti</h2>
                 </div> :
                 <div>
                     <Row gutter={[16, 16]}>
-                        {Products.map((product, index) =>{})}
 
                         {renderCards}
 
@@ -197,7 +195,7 @@ function LandingPage() {
 
             {PostSize >= Limit &&
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <button onClick={onLoadMore}>Me shume</button>
+                    <button onClick={onLoadMore}>Shfaq me shume</button>
                 </div>
             }
 
@@ -206,4 +204,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage  
+export default LandingPage

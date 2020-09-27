@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Auth from "../hoc/auth";
-// pages for this product
 import LandingPage from "./views/LandingPage/LandingPage.js";
 import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
@@ -15,7 +14,7 @@ import ComputerPartsPage from './views/ComputerPartsPage/ComputerPartsPage';
 
 function App() {
   return (
-    <Suspense fallback={(<div>Loading...</div>)}>
+    <Suspense fallback={(<div>Duke u ngarkuar</div>)}>
       <NavBar />
       <div style={{ paddingTop: '75px', minHeight: 'calc(100vh - 80px)' }}>
         <Switch>

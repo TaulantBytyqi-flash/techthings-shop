@@ -15,6 +15,10 @@ export default function (ComposedClass, reload, adminRoute = null) {
                     if (reload) {
                         props.history.push('/login')
                     }
+                    else{
+                        if(response.payload.isAdmin === 1)
+                        props.history.push('/users')
+                    }
                 } else {
                     if (adminRoute && !response.payload.isAdmin) {
                         props.history.push('/')
